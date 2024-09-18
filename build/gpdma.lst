@@ -1,0 +1,165 @@
+ARM GAS  /tmp/ccB4Zt3Y.s 			page 1
+
+
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu fpv4-sp-d16
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 27, 1
+   6              		.eabi_attribute 28, 1
+   7              		.eabi_attribute 20, 1
+   8              		.eabi_attribute 21, 1
+   9              		.eabi_attribute 23, 3
+  10              		.eabi_attribute 24, 1
+  11              		.eabi_attribute 25, 1
+  12              		.eabi_attribute 26, 1
+  13              		.eabi_attribute 30, 1
+  14              		.eabi_attribute 34, 1
+  15              		.eabi_attribute 18, 4
+  16              		.file	"gpdma.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.file 1 "Core/Src/gpdma.c"
+  21              		.section	.text.MX_GPDMA1_Init,"ax",%progbits
+  22              		.align	1
+  23              		.global	MX_GPDMA1_Init
+  24              		.syntax unified
+  25              		.thumb
+  26              		.thumb_func
+  28              	MX_GPDMA1_Init:
+  29              	.LFB157:
+   1:Core/Src/gpdma.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/gpdma.c **** /**
+   3:Core/Src/gpdma.c ****   ******************************************************************************
+   4:Core/Src/gpdma.c ****   * @file    gpdma.c
+   5:Core/Src/gpdma.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/gpdma.c ****   *          of the GPDMA instances.
+   7:Core/Src/gpdma.c ****   ******************************************************************************
+   8:Core/Src/gpdma.c ****   * @attention
+   9:Core/Src/gpdma.c ****   *
+  10:Core/Src/gpdma.c ****   * Copyright (c) 2024 STMicroelectronics.
+  11:Core/Src/gpdma.c ****   * All rights reserved.
+  12:Core/Src/gpdma.c ****   *
+  13:Core/Src/gpdma.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/gpdma.c ****   * in the root directory of this software component.
+  15:Core/Src/gpdma.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/gpdma.c ****   *
+  17:Core/Src/gpdma.c ****   ******************************************************************************
+  18:Core/Src/gpdma.c ****   */
+  19:Core/Src/gpdma.c **** /* USER CODE END Header */
+  20:Core/Src/gpdma.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/gpdma.c **** #include "gpdma.h"
+  22:Core/Src/gpdma.c **** 
+  23:Core/Src/gpdma.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/gpdma.c **** 
+  25:Core/Src/gpdma.c **** /* USER CODE END 0 */
+  26:Core/Src/gpdma.c **** 
+  27:Core/Src/gpdma.c **** /* GPDMA1 init function */
+  28:Core/Src/gpdma.c **** void MX_GPDMA1_Init(void)
+  29:Core/Src/gpdma.c **** {
+ARM GAS  /tmp/ccB4Zt3Y.s 			page 2
+
+
+  30              		.loc 1 29 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 00B5     		push	{lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 83B0     		sub	sp, sp, #12
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 16
+  30:Core/Src/gpdma.c **** 
+  31:Core/Src/gpdma.c ****   /* USER CODE BEGIN GPDMA1_Init 0 */
+  32:Core/Src/gpdma.c **** 
+  33:Core/Src/gpdma.c ****   /* USER CODE END GPDMA1_Init 0 */
+  34:Core/Src/gpdma.c **** 
+  35:Core/Src/gpdma.c ****   /* Peripheral clock enable */
+  36:Core/Src/gpdma.c ****   __HAL_RCC_GPDMA1_CLK_ENABLE();
+  41              		.loc 1 36 3 view .LVU1
+  42              	.LBB2:
+  43              		.loc 1 36 3 view .LVU2
+  44              		.loc 1 36 3 view .LVU3
+  45 0004 0F4B     		ldr	r3, .L3
+  46 0006 D3F88820 		ldr	r2, [r3, #136]
+  47 000a 42F00102 		orr	r2, r2, #1
+  48 000e C3F88820 		str	r2, [r3, #136]
+  49              		.loc 1 36 3 view .LVU4
+  50 0012 D3F88830 		ldr	r3, [r3, #136]
+  51 0016 03F00103 		and	r3, r3, #1
+  52 001a 0193     		str	r3, [sp, #4]
+  53              		.loc 1 36 3 view .LVU5
+  54 001c 019B     		ldr	r3, [sp, #4]
+  55              	.LBE2:
+  56              		.loc 1 36 3 view .LVU6
+  37:Core/Src/gpdma.c **** 
+  38:Core/Src/gpdma.c ****   /* GPDMA1 interrupt Init */
+  39:Core/Src/gpdma.c ****     HAL_NVIC_SetPriority(GPDMA1_Channel10_IRQn, 0, 0);
+  57              		.loc 1 39 5 view .LVU7
+  58 001e 0022     		movs	r2, #0
+  59 0020 1146     		mov	r1, r2
+  60 0022 5220     		movs	r0, #82
+  61 0024 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  62              	.LVL0:
+  40:Core/Src/gpdma.c ****     HAL_NVIC_EnableIRQ(GPDMA1_Channel10_IRQn);
+  63              		.loc 1 40 5 view .LVU8
+  64 0028 5220     		movs	r0, #82
+  65 002a FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  66              	.LVL1:
+  41:Core/Src/gpdma.c ****     HAL_NVIC_SetPriority(GPDMA1_Channel11_IRQn, 0, 0);
+  67              		.loc 1 41 5 view .LVU9
+  68 002e 0022     		movs	r2, #0
+  69 0030 1146     		mov	r1, r2
+  70 0032 5320     		movs	r0, #83
+  71 0034 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  72              	.LVL2:
+  42:Core/Src/gpdma.c ****     HAL_NVIC_EnableIRQ(GPDMA1_Channel11_IRQn);
+  73              		.loc 1 42 5 view .LVU10
+ARM GAS  /tmp/ccB4Zt3Y.s 			page 3
+
+
+  74 0038 5320     		movs	r0, #83
+  75 003a FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  76              	.LVL3:
+  43:Core/Src/gpdma.c **** 
+  44:Core/Src/gpdma.c ****   /* USER CODE BEGIN GPDMA1_Init 1 */
+  45:Core/Src/gpdma.c **** 
+  46:Core/Src/gpdma.c ****   /* USER CODE END GPDMA1_Init 1 */
+  47:Core/Src/gpdma.c ****   /* USER CODE BEGIN GPDMA1_Init 2 */
+  48:Core/Src/gpdma.c **** 
+  49:Core/Src/gpdma.c ****   /* USER CODE END GPDMA1_Init 2 */
+  50:Core/Src/gpdma.c **** 
+  51:Core/Src/gpdma.c **** }
+  77              		.loc 1 51 1 is_stmt 0 view .LVU11
+  78 003e 03B0     		add	sp, sp, #12
+  79              	.LCFI2:
+  80              		.cfi_def_cfa_offset 4
+  81              		@ sp needed
+  82 0040 5DF804FB 		ldr	pc, [sp], #4
+  83              	.L4:
+  84              		.align	2
+  85              	.L3:
+  86 0044 000C0246 		.word	1174539264
+  87              		.cfi_endproc
+  88              	.LFE157:
+  90              		.text
+  91              	.Letext0:
+  92              		.file 2 "Drivers/CMSIS/Device/ST/STM32U5xx/Include/stm32u575xx.h"
+  93              		.file 3 "/opt/st/stm32cubeide_1.16.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-
+  94              		.file 4 "/opt/st/stm32cubeide_1.16.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-
+  95              		.file 5 "Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_cortex.h"
+ARM GAS  /tmp/ccB4Zt3Y.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpdma.c
+     /tmp/ccB4Zt3Y.s:22     .text.MX_GPDMA1_Init:00000000 $t
+     /tmp/ccB4Zt3Y.s:28     .text.MX_GPDMA1_Init:00000000 MX_GPDMA1_Init
+     /tmp/ccB4Zt3Y.s:86     .text.MX_GPDMA1_Init:00000044 $d
+
+UNDEFINED SYMBOLS
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ

@@ -1,0 +1,150 @@
+ARM GAS  /tmp/ccEUYfOK.s 			page 1
+
+
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu fpv4-sp-d16
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 27, 1
+   6              		.eabi_attribute 28, 1
+   7              		.eabi_attribute 20, 1
+   8              		.eabi_attribute 21, 1
+   9              		.eabi_attribute 23, 3
+  10              		.eabi_attribute 24, 1
+  11              		.eabi_attribute 25, 1
+  12              		.eabi_attribute 26, 1
+  13              		.eabi_attribute 30, 1
+  14              		.eabi_attribute 34, 1
+  15              		.eabi_attribute 18, 4
+  16              		.file	"icache.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.file 1 "Core/Src/icache.c"
+  21              		.section	.text.MX_ICACHE_Init,"ax",%progbits
+  22              		.align	1
+  23              		.global	MX_ICACHE_Init
+  24              		.syntax unified
+  25              		.thumb
+  26              		.thumb_func
+  28              	MX_ICACHE_Init:
+  29              	.LFB157:
+   1:Core/Src/icache.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/icache.c **** /**
+   3:Core/Src/icache.c ****   ******************************************************************************
+   4:Core/Src/icache.c ****   * @file    icache.c
+   5:Core/Src/icache.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/icache.c ****   *          of the ICACHE instances.
+   7:Core/Src/icache.c ****   ******************************************************************************
+   8:Core/Src/icache.c ****   * @attention
+   9:Core/Src/icache.c ****   *
+  10:Core/Src/icache.c ****   * Copyright (c) 2024 STMicroelectronics.
+  11:Core/Src/icache.c ****   * All rights reserved.
+  12:Core/Src/icache.c ****   *
+  13:Core/Src/icache.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/icache.c ****   * in the root directory of this software component.
+  15:Core/Src/icache.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/icache.c ****   *
+  17:Core/Src/icache.c ****   ******************************************************************************
+  18:Core/Src/icache.c ****   */
+  19:Core/Src/icache.c **** /* USER CODE END Header */
+  20:Core/Src/icache.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/icache.c **** #include "icache.h"
+  22:Core/Src/icache.c **** 
+  23:Core/Src/icache.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/icache.c **** 
+  25:Core/Src/icache.c **** /* USER CODE END 0 */
+  26:Core/Src/icache.c **** 
+  27:Core/Src/icache.c **** /* ICACHE init function */
+  28:Core/Src/icache.c **** void MX_ICACHE_Init(void)
+  29:Core/Src/icache.c **** {
+ARM GAS  /tmp/ccEUYfOK.s 			page 2
+
+
+  30              		.loc 1 29 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  30:Core/Src/icache.c **** 
+  31:Core/Src/icache.c ****   /* USER CODE BEGIN ICACHE_Init 0 */
+  32:Core/Src/icache.c **** 
+  33:Core/Src/icache.c ****   /* USER CODE END ICACHE_Init 0 */
+  34:Core/Src/icache.c **** 
+  35:Core/Src/icache.c ****   /* USER CODE BEGIN ICACHE_Init 1 */
+  36:Core/Src/icache.c **** 
+  37:Core/Src/icache.c ****   /* USER CODE END ICACHE_Init 1 */
+  38:Core/Src/icache.c **** 
+  39:Core/Src/icache.c ****   /** Enable instruction cache in 1-way (direct mapped cache)
+  40:Core/Src/icache.c ****   */
+  41:Core/Src/icache.c ****   if (HAL_ICACHE_ConfigAssociativityMode(ICACHE_1WAY) != HAL_OK)
+  39              		.loc 1 41 3 view .LVU1
+  40              		.loc 1 41 7 is_stmt 0 view .LVU2
+  41 0002 0020     		movs	r0, #0
+  42 0004 FFF7FEFF 		bl	HAL_ICACHE_ConfigAssociativityMode
+  43              	.LVL0:
+  44              		.loc 1 41 6 view .LVU3
+  45 0008 18B9     		cbnz	r0, .L5
+  46              	.L2:
+  42:Core/Src/icache.c ****   {
+  43:Core/Src/icache.c ****     Error_Handler();
+  44:Core/Src/icache.c ****   }
+  45:Core/Src/icache.c ****   if (HAL_ICACHE_Enable() != HAL_OK)
+  47              		.loc 1 45 3 is_stmt 1 view .LVU4
+  48              		.loc 1 45 7 is_stmt 0 view .LVU5
+  49 000a FFF7FEFF 		bl	HAL_ICACHE_Enable
+  50              	.LVL1:
+  51              		.loc 1 45 6 view .LVU6
+  52 000e 18B9     		cbnz	r0, .L6
+  53              	.L1:
+  46:Core/Src/icache.c ****   {
+  47:Core/Src/icache.c ****     Error_Handler();
+  48:Core/Src/icache.c ****   }
+  49:Core/Src/icache.c ****   /* USER CODE BEGIN ICACHE_Init 2 */
+  50:Core/Src/icache.c **** 
+  51:Core/Src/icache.c ****   /* USER CODE END ICACHE_Init 2 */
+  52:Core/Src/icache.c **** 
+  53:Core/Src/icache.c **** }
+  54              		.loc 1 53 1 view .LVU7
+  55 0010 08BD     		pop	{r3, pc}
+  56              	.L5:
+  43:Core/Src/icache.c ****   }
+  57              		.loc 1 43 5 is_stmt 1 view .LVU8
+  58 0012 FFF7FEFF 		bl	Error_Handler
+  59              	.LVL2:
+  60 0016 F8E7     		b	.L2
+  61              	.L6:
+ARM GAS  /tmp/ccEUYfOK.s 			page 3
+
+
+  47:Core/Src/icache.c ****   }
+  62              		.loc 1 47 5 view .LVU9
+  63 0018 FFF7FEFF 		bl	Error_Handler
+  64              	.LVL3:
+  65              		.loc 1 53 1 is_stmt 0 view .LVU10
+  66 001c F8E7     		b	.L1
+  67              		.cfi_endproc
+  68              	.LFE157:
+  70              		.text
+  71              	.Letext0:
+  72              		.file 2 "/opt/st/stm32cubeide_1.16.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-
+  73              		.file 3 "/opt/st/stm32cubeide_1.16.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-
+  74              		.file 4 "Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_def.h"
+  75              		.file 5 "Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_icache.h"
+  76              		.file 6 "Core/Inc/main.h"
+ARM GAS  /tmp/ccEUYfOK.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 icache.c
+     /tmp/ccEUYfOK.s:22     .text.MX_ICACHE_Init:00000000 $t
+     /tmp/ccEUYfOK.s:28     .text.MX_ICACHE_Init:00000000 MX_ICACHE_Init
+
+UNDEFINED SYMBOLS
+HAL_ICACHE_ConfigAssociativityMode
+HAL_ICACHE_Enable
+Error_Handler
